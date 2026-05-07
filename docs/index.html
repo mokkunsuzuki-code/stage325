@@ -1,50 +1,131 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <title>Stage325: Verifiable Audit Report Export</title>
+
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 980px; margin: 40px auto; line-height: 1.6; color: #111; }
-    h1 { font-size: 36px; margin-bottom: 8px; }
-    .hero { padding: 28px; border: 1px solid #ddd; border-radius: 16px; background: #fafafa; }
-    .box { border: 1px solid #ddd; border-radius: 14px; padding: 20px; margin: 20px 0; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    pre { background: #f6f6f6; padding: 12px; border-radius: 10px; overflow-x: auto; }
-    a { color: #111; font-weight: 700; }
-    .cta { background: #111; color: #fff; border-radius: 14px; padding: 22px; margin-top: 24px; }
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 980px;
+      margin: 40px auto;
+      line-height: 1.7;
+      color: #111;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .hero {
+      padding: 32px;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      background: #fafafa;
+      margin-bottom: 24px;
+    }
+
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 20px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    pre {
+      background: #f6f6f6;
+      padding: 14px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    code {
+      background: #f6f6f6;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    a {
+      color: #111;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: #111;
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
   </style>
 </head>
+
 <body>
 
 <section class="hero">
-  <h1>Stage325: Verifiable Audit Report Export</h1>
-  <p><b>Do not just export reports. Export verifiable proof packages.</b></p>
+  <h1>Stage325: 検証可能な監査レポートのエクスポート</h1>
+
   <p>
-    Stage325 turns public verification infrastructure into a submit-ready audit report package
-    in JSON, HTML, and PDF.
+    <b>
+      単にレポートをエクスポートするだけでなく、
+      検証可能な証拠パッケージをエクスポートしてください。
+    </b>
+  </p>
+
+  <p>
+    Stage325は、公開検証インフラを、
+    JSON・HTML・PDF形式の提出可能な監査証拠パッケージへ変換します。
   </p>
 </section>
 
 <div class="grid">
+
   <div class="box">
-    <h2>Problem</h2>
+    <h2>問題</h2>
+
     <p>
-      A normal PDF report can be read, but it cannot prove that the underlying audit history
-      has not been changed.
+      通常のPDFレポートは「読む」ことはできます。
+      しかし、そのレポートの根拠が本物かどうかを、
+      第三者が独立して検証することはできません。
     </p>
   </div>
 
   <div class="box">
-    <h2>Solution</h2>
+    <h2>解決</h2>
+
     <p>
-      Stage325 exports the report together with signed history, public key,
-      and reproducible verification instructions.
+      Stage325は、
+      署名付き履歴、公開鍵、再現可能な検証コマンドを含む
+      監査証拠パッケージをエクスポートします。
+    </p>
+
+    <p>
+      これにより、提出されたレポートを
+      第三者が独立して検証できます。
     </p>
   </div>
+
 </div>
 
 <div class="box">
-  <h2>Exported Report Files</h2>
+  <h2>エクスポートされるレポート</h2>
+
   <ul>
     <li><a href="report/report.json">report.json</a></li>
     <li><a href="report/report.html">report.html</a></li>
@@ -55,6 +136,7 @@
 
 <div class="box">
   <h2>Proof Files</h2>
+
   <ul>
     <li><a href="proofs/history.json">history.json</a></li>
     <li><a href="proofs/history.json.sig">history.json.sig</a></li>
@@ -64,19 +146,27 @@
 
 <div class="box">
   <h2>Verify</h2>
-  <pre>gpg --import proofs/public-key.asc
+
+<pre>gpg --import proofs/public-key.asc
 gpg --verify proofs/history.json.sig proofs/history.json</pre>
+
 </div>
 
 <div class="box">
   <h2>Stage Evolution</h2>
-  <pre>Stage324: Verify in public
-Stage325: Export and submit as verifiable audit evidence</pre>
+
+<pre>Stage324：ブラウザ上で検証
+Stage325：監査証拠として提出</pre>
+
 </div>
 
 <div class="cta">
-  <h2>Submit-ready verification</h2>
-  <p>Stage325 moves REMEDA from public verification to external audit submission.</p>
+  <h2>Submit-ready Verification</h2>
+
+  <p>
+    Stage325により、REMEDAは
+    「公開検証」から「外部監査提出」へ進化します。
+  </p>
 </div>
 
 </body>
