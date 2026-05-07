@@ -1,0 +1,23 @@
+{
+  "proof_id": "demo-ai-vulnerability",
+  "stage": 320,
+  "title": "AI Vulnerability Verification Proof",
+  "decision": "ACCEPT",
+  "trust_score": 0.96,
+  "approved_by": "Motohiro Suzuki",
+  "proof_status": "Public Proof URL",
+  "submission_ready": true,
+  "breakdown": {
+    "integrity": 0.98,
+    "execution": 0.95,
+    "identity": 0.94,
+    "time": 0.97
+  },
+  "flow": [
+    "AI Vulnerability",
+    "Verification",
+    "Proof URL"
+  ],
+  "summary": "This proof shows that an AI vulnerability claim was verified and converted into a human-readable proof URL for external submission.",
+  "upgrade_cta": "Need signed proof history and API access? Upgrade to Pro."
+}

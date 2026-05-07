@@ -1,0 +1,25 @@
+# secrets / private / core
+core/
+keys/
+*.pem
+*.key
+*.p12
+*.pfx
+*.asc.secret
+.env
+.env.*
+.DS_Store
+
+# local env
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# internal implementation
+app.py
+verify_chain.py
+templates/
+static/
+docs/static/
+public/static/

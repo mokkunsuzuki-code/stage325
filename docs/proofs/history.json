@@ -1,0 +1,31 @@
+{
+  "stage": 325,
+  "title": "Verifiable Audit Report Export",
+  "proof_status": "exportable audit proof package",
+  "issuer": "Motohiro Suzuki",
+  "export_formats": ["JSON", "HTML", "PDF"],
+  "signature_method": "GPG detached signature",
+  "hardware_key": "YubiKey",
+  "purpose": "Create an externally submit-ready audit report package that remains verifiable after export.",
+  "files": [
+    "report/report.json",
+    "report/report.html",
+    "report/report.pdf",
+    "report/verify.txt",
+    "proofs/history.json",
+    "proofs/history.json.sig",
+    "proofs/public-key.asc"
+  ],
+  "what_this_proves": [
+    "The audit report exists.",
+    "The audit history has not been tampered with.",
+    "The report package includes verification instructions.",
+    "The exported report can be submitted externally.",
+    "Third parties can verify the proof using the public key and signature."
+  ],
+  "stage324_to_stage325": {
+    "stage324": "multi-signature-ready public verification",
+    "stage325": "verifiable audit report export package"
+  },
+  "summary": "Stage325 turns public verification infrastructure into a submit-ready audit report package in JSON, HTML, and PDF."
+}
