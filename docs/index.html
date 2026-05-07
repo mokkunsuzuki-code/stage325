@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+
   <title>Stage325: Verifiable Audit Report Export</title>
 
   <style>
@@ -9,14 +10,14 @@
       font-family: system-ui, sans-serif;
       max-width: 980px;
       margin: 40px auto;
+      padding: 0 20px;
       line-height: 1.7;
       color: #111;
-      padding: 0 20px;
     }
 
     h1 {
       font-size: 40px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     h2 {
@@ -28,13 +29,13 @@
       border: 1px solid #ddd;
       border-radius: 18px;
       background: #fafafa;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .box {
       border: 1px solid #ddd;
       border-radius: 14px;
-      padding: 22px;
+      padding: 24px;
       margin: 20px 0;
     }
 
@@ -51,15 +52,13 @@
       overflow-x: auto;
     }
 
-    code {
-      background: #f6f6f6;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-
     a {
       color: #111;
       font-weight: 700;
+    }
+
+    ul {
+      line-height: 1.8;
     }
 
     .cta {
@@ -69,16 +68,13 @@
       padding: 28px;
       margin-top: 30px;
     }
-
-    ul {
-      line-height: 1.8;
-    }
   </style>
 </head>
 
 <body>
 
 <section class="hero">
+
   <h1>Stage325: 検証可能な監査レポートのエクスポート</h1>
 
   <p>
@@ -92,11 +88,13 @@
     Stage325は、公開検証インフラを、
     JSON・HTML・PDF形式の提出可能な監査証拠パッケージへ変換します。
   </p>
+
 </section>
 
 <div class="grid">
 
   <div class="box">
+
     <h2>問題</h2>
 
     <p>
@@ -104,9 +102,11 @@
       しかし、そのレポートの根拠が本物かどうかを、
       第三者が独立して検証することはできません。
     </p>
+
   </div>
 
   <div class="box">
+
     <h2>解決</h2>
 
     <p>
@@ -116,14 +116,16 @@
     </p>
 
     <p>
-      これにより、提出されたレポートを
-      第三者が独立して検証できます。
+      これにより、
+      提出されたレポートを第三者が独立して検証できます。
     </p>
+
   </div>
 
 </div>
 
 <div class="box">
+
   <h2>エクスポートされるレポート</h2>
 
   <ul>
@@ -132,9 +134,11 @@
     <li><a href="report/report.pdf">report.pdf</a></li>
     <li><a href="report/verify.txt">verify.txt</a></li>
   </ul>
+
 </div>
 
 <div class="box">
+
   <h2>Proof Files</h2>
 
   <ul>
@@ -142,9 +146,11 @@
     <li><a href="proofs/history.json.sig">history.json.sig</a></li>
     <li><a href="proofs/public-key.asc">public-key.asc</a></li>
   </ul>
+
 </div>
 
 <div class="box">
+
   <h2>Verify</h2>
 
 <pre>gpg --import proofs/public-key.asc
@@ -153,6 +159,7 @@ gpg --verify proofs/history.json.sig proofs/history.json</pre>
 </div>
 
 <div class="box">
+
   <h2>Stage Evolution</h2>
 
 <pre>Stage324：ブラウザ上で検証
@@ -161,12 +168,44 @@ Stage325：監査証拠として提出</pre>
 </div>
 
 <div class="cta">
+
   <h2>Submit-ready Verification</h2>
 
   <p>
-    Stage325により、REMEDAは
-    「公開検証」から「外部監査提出」へ進化します。
+    Stage325により、
+    REMEDAは「公開検証」から
+    「外部監査提出」へ進化します。
   </p>
+
+</div>
+
+<div class="box">
+
+  <h2>🔥 なぜこれが強いか</h2>
+
+  <p>
+    今までは「検証できる」だった。
+  </p>
+
+  <p>
+    Stage325は、
+    「提出しても後から検証できる」。
+  </p>
+
+  <p>
+    ここが本質です。
+  </p>
+
+</div>
+
+<div class="box">
+
+  <h2>💡 一言</h2>
+
+<pre>Stage318 = 説明
+Stage324 = 検証
+Stage325 = 提出</pre>
+
 </div>
 
 </body>
