@@ -1,82 +1,67 @@
-# Stage324: Multi-Signed Public Verification Page
+# Stage325: Verifiable Audit Report Export
 
-Turn audit history into a **multi-signature-ready public verification proof**.
+Turn public verification infrastructure into a **submit-ready audit report package**.
 
-Do not just trust logs.  
-Verify who approved them.
+Do not just export reports.  
+Export verifiable proof packages.
 
 ---
 
 ## Overview
 
-Stage323 added YubiKey/GPG issuer assurance to audit history.
+Stage324 made audit evidence publicly verifiable.
 
-Stage324 upgrades it into a **multi-signature-ready public verification page**.
+Stage325 upgrades it into an externally submit-ready audit report package in:
 
-The goal is simple:
+- JSON
+- HTML
+- PDF
 
-> Move from individual accountability to organization-level approval.
+The report is not just readable.  
+It includes signed history, public verification files, and reproducible verification instructions.
 
 ---
 
 ## Core Idea
 
 ```text
-history.json
+audit history
   ↓
-signature 1
+signed proof
   ↓
-signature 2
+JSON / HTML / PDF report
   ↓
-public keys
+external submission
   ↓
 third-party verification
-  ↓
-public browser verification page
-What Stage324 Adds
-Multi-signature-ready folder structure
-Detached GPG signature files
-Public key export
-Public verification page
-Terminal verification script
-Browser-visible verification instructions
-Files
+Exported Report Files
+docs/report/report.json
+docs/report/report.html
+docs/report/report.pdf
+docs/report/verify.txt
+Proof Files
 docs/proofs/history.json
 docs/proofs/history.json.sig
 docs/proofs/public-key.asc
-docs/proofs/signatures/history.motohiro.asc
-verify_signature.sh
-verify_multisig.sh
 Verify
-./verify_signature.sh
-
-Or:
-
-./verify_multisig.sh
+./verify_report.sh
 
 Manual verification:
 
 gpg --import docs/proofs/public-key.asc
-gpg --verify docs/proofs/signatures/history.motohiro.asc docs/proofs/history.json
+gpg --verify docs/proofs/history.json.sig docs/proofs/history.json
 What This Proves
-The audit history exists.
+The audit report exists.
 The audit history has not been tampered with.
-The audit history is signed by an identifiable issuer.
-The verification process is public and reproducible.
-The structure is ready for multiple signatures.
+The report package includes verification instructions.
+The exported report can be submitted externally.
+Third parties can verify the proof using the public key and signature.
 Stage Evolution
-Stage322 = audit infrastructure
-Stage323 = issuer-backed audit infrastructure
-Stage324 = multi-signature-ready public verification infrastructure
-Who Needs This?
-Security teams
-Compliance teams
-AI report verification workflows
-Organizations requiring approval evidence
-Anyone needing externally verifiable audit accountability
+Stage324 = public verification
+Stage325 = verifiable external audit submission
 Live Demo
 
-https://mokkunsuzuki-code.github.io/stage324/
+https://mokkunsuzuki-code.github.io/stage325/
 
 Security Policy
 
@@ -88,12 +73,13 @@ core/
 keys/
 *.pem
 *.key
-*.p12
 .env
-.env.*
 .venv/
+app.py
+templates/
+static/
 
-Only public verification artifacts are published.
+Only public verification artifacts and report packages are published.
 
 License
 
